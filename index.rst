@@ -1,12 +1,11 @@
-.. Electrum documentation master file, created by
-   sphinx-quickstart on Fri Sep 18 14:24:02 2015.
+.. Electron Cash documentation master file
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to the Electrum Documentation!
-======================================
+Welcome to the Electron Cash Documentation!
+===========================================
 
-Electrum is a lightweight Bitcoin wallet.
+Electron Cash is a lightweight Bitcoin Cash wallet.
 
 GUI and beginners
 -----------------
@@ -16,7 +15,6 @@ GUI and beginners
 
    faq
    invoices
-   2fa
    multisig
    coldstorage
 
