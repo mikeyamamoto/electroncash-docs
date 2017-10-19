@@ -27,8 +27,6 @@ Advanced users
    cmdline
    coldstorage_cmdline
    merchant
-   hardfork
-   tor
 
 For developers
 --------------
@@ -38,6 +36,5 @@ For developers
 
    console
    spv
-   seedphrase
    protocol
    transactions

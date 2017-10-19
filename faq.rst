@@ -2,18 +2,18 @@ Frequently Asked Questions
 ==========================
 
 
-How does Electrum work?
------------------------
-
-Electrum's focus is speed, with low resource usage and
-simplifying Bitcoin. Startup times are instant because it
-operates in conjunction with high-performance servers that
-handle the most complicated parts of the Bitcoin system.
-
-Does Electrum trust servers?
+How does Electron Cash work?
 ----------------------------
 
-Not really; the Electrum client never sends private keys
+Electron Cash's focus is speed, with low resource usage and
+simplifying Bitcoin Cash. Startup times are instant because it
+operates in conjunction with high-performance servers that
+handle the most complicated parts of the Bitcoin Cash system.
+
+Does Electron Cash trust servers?
+---------------------------------
+
+Not really; the Electron Cash client never sends private keys
 to the servers. In addition, it verifies the information
 reported by servers, using a technique called :ref:`Simple Payment Verification <spv>`
 
@@ -35,8 +35,8 @@ the "restore wallet" option in the startup.
 How secure is the seed?
 -----------------------
 
-The seed phrase created by Electrum has 132 bits of entropy. This
-means that it provides the same level of security as a Bitcoin private
+The seed phrase created by Electron Cash has 132 bits of entropy. This
+means that it provides the same level of security as a Bitcoin Cash private
 key (of length 256 bits). Indeed, an elliptic curve key of length n
 provides n/2 bits of security.
 
@@ -54,14 +54,14 @@ phrase on paper.
 My transaction has been unconfirmed for a long time. What can I do?
 -------------------------------------------------------------------
 
-Bitcoin transactions become 'confirmed' when miners accept to write
-them in the Bitcoin blockchain. In general, the speed of confirmation
+Bitcoin Cash transactions become 'confirmed' when miners accept to write
+them in the Bitcoin Cash blockchain. In general, the speed of confirmation
 depends on the fee you attach to your transaction; miners prioritize
 transaction that pay the highest fees.
 
-Recent versions of Electrum use 'dynamic fees', in order to make sure
+Recent versions of Electron Cash use 'dynamic fees', in order to make sure
 that the fee you pay with your transaction is adequate. This feature
-is enabled by default in recent versions of Electrum.
+is enabled by default in recent versions of Electron Cash.
 
 If you have made a transaction that is unconfirmed, you can:
 
@@ -80,18 +80,18 @@ If you have made a transaction that is unconfirmed, you can:
    change output.
 
 
-What does it mean to "Freeze" an address in Electrum?
------------------------------------------------------
+What does it mean to "Freeze" an address in Electron Cash?
+----------------------------------------------------------
 
 When you freeze an address, the funds in that address will not be used
-for sending bitcoins. You can not send Bitcoins if you don't have
+for sending Bitcoin Cash. You can not send Bitcoin Cash if you don't have
 enough funds in the non-frozen addresses.
           
 
 How is the wallet encrypted?
 ----------------------------
 
-Electrum uses two separate levels of encryption:
+Electron Cash uses two separate levels of encryption:
 
  - Your seed and private keys are encrypted using AES-256-CBC. The
    private keys are decrypted only briefly, when you need to sign a
@@ -103,25 +103,23 @@ Electrum uses two separate levels of encryption:
    the wallet information will remain unencrypted in the memory of
    your computer for the duration of your session. If a wallet is
    encrypted, then its password will be required in order to open
-   it. Note that the password will not be kept in memory; Electrum
+   it. Note that the password will not be kept in memory; Electron Cash
    does not need it in order to save the wallet on disk, because it
    uses asymmetric encryption (ECIES).
 
-Wallet file encryption is activated by default since version 2.8. It
-is intended to protect your privacy, but also to prevent you from
-requesting bitcoins on a wallet that you do not control.
+Wallet file encryption is activated by default since version 2.8.
 
 
-Does Electrum support cold wallets?
------------------------------------
+Does Electron Cash support cold wallets?
+----------------------------------------
 
 Yes. see :ref:`Cold Storage <coldstorage>`
 
 
-Can I import private keys from other Bitcoin clients?
------------------------------------------------------
+Can I import private keys from other Bitcoin Cash clients?
+----------------------------------------------------------
 
-In Electrum 2.0, you cannot import private keys in a wallet that has a
+In Electron Cash, you cannot import private keys in a wallet that has a
 seed. You should sweep them instead.
 
 If you want to import private keys and not sweep them you need to
@@ -137,20 +135,20 @@ watching-only wallet.
 You will need to back up this wallet, because it cannot be
 recovered from seed.
 
-Can I sweep private keys from other Bitcoin clients?
-----------------------------------------------------
+Can I sweep private keys from other Bitcoin Cash clients?
+---------------------------------------------------------
 
 
-Sweeping private keys means to send all the bitcoins they control to
+Sweeping private keys means to send all the Bitcoin Cash they control to
 an existing address in your wallet. The private keys you sweep do not
-become a part of your wallet.  Instead, all the bitcoins they control
+become a part of your wallet.  Instead, all the Bitcoin Cash they control
 are sent to an address that has been deterministically generated from
 your wallet seed.
 
 To sweep private keys go to Wallet menu -> Private Keys ->
 Sweep. Enter the private keys in the appropriate field. Leave the
 'Address' field unchanged. That is the destination address and it'll
-be from your existing electrum wallet.
+be from your existing Electron Cash wallet.
 
 Where is my wallet file located?
 --------------------------------
@@ -161,21 +159,21 @@ you first run the application and located under the /wallets folder.
 On Windows:
 
  - Show hidden files
- - Go to \\Users\\YourUserName\\AppData\\Roaming\\Electrum\\wallets (or %APPDATA%\\Electrum\\wallets)
+ - Go to \\Users\\YourUserName\\AppData\\Roaming\\Electron Cash\\wallets (or %APPDATA%\\Electrum\\wallets)
 
 On Mac:
 
 - Open Finder
-- Go to folder (shift+cmd+G) and type ~/.electrum
+- Go to folder (shift+cmd+G) and type ~/.electron-cash
 
 On Linux:
 
 - Home Folder
-- Go -> Location and type ~/.electrum
+- Go -> Location and type ~/.electron-cash
 
 
-Can I do bulk payments with Electrum?
--------------------------------------
+Can I do bulk payments with Electron Cash?
+------------------------------------------
 
 You can create a transaction with several outputs. In the GUI, type
 each address and amount on a line, separated by a comma.
@@ -189,18 +187,18 @@ You can also import a CSV file in the 'Pay to' field, by clicking on
 the folder icon.
 
 
-Can Electrum create and sign raw transactions?
-----------------------------------------------
+Can Electron Cash create and sign raw transactions?
+---------------------------------------------------
 
-Electrum lets you create and sign raw transactions right from the user
+Electron Cash lets you create and sign raw transactions right from the user
 interface using a form.
 
-Electrum freezes when I try to send bitcoins
---------------------------------------------
+Electron Cash freezes when I try to send Bitcoin Cash
+-----------------------------------------------------
 
 This might happen if you are trying to spend a large number of
 transactions outputs (for example, if you have collected hundreds of
-donations from a Bitcoin faucet).  When you send Bitcoins, Electrum
+donations from a faucet).  When you send Bitcoin Cash, Electron Cash
 looks for unspent coins that are in your wallet, in order to create a
 new transaction. Unspent coins can have different values, much like
 physical coins and bills.
@@ -216,8 +214,8 @@ What is the gap limit?
 ----------------------
 
 The gap limit is the maximum number of consecutive unused addresses in
-your deterministic sequence of addresses.  Electrum uses it in order
-to stop looking for addresses. In Electrum 2.0, it is set to 20 by
+your deterministic sequence of addresses.  Electron Cash uses it in order
+to stop looking for addresses. In Electron Cash, it is set to 20 by
 default, so the client will get all addresses until 20 unused
 addresses are found.
           
@@ -225,7 +223,7 @@ addresses are found.
 How can I pre-generate new addresses?
 -------------------------------------
 
-Electrum will generate new addresses as you use them,
+Electron Cash will generate new addresses as you use them,
 until it hits the `gap limit`_
 
 If you need to pre-generate more addresses, you can do so by typing
@@ -250,50 +248,23 @@ do this:
 	print wallet.create_new_address(False)
 
 
-How to upgrade Electrum?
-------------------------
+How to upgrade Electron Cash?
+-----------------------------
 
 Warning: always save your wallet seed on paper before
 doing an upgrade.
 
-To upgrade Electrum, just install the most recent version.
+To upgrade Electron Cash, just install the most recent version.
 The way to do this will depend on your OS.
 
 Note that your wallet files are stored separately from the
 software, so you can safely remove the old version of the
 software if your OS does not do it for you.
 
-Some Electrum upgrades will modify the format of your
+Some Electron Cash upgrades will modify the format of your
 wallet files.
 
 For this reason, it is not recommended to downgrade
-Electrum to an older version, once you have opened your
+Electron Cash to an older version, once you have opened your
 wallet file with the new version. The older version will
 not always be able to read the new wallet file.
-
-
-The following issues should be considered when upgrading
-Electrum 1.x wallets to Electrum 2.x:
-
-- Electrum 2.x will need to regenerate all of your
-  addresses during the upgrade process. Please allow it
-  time to complete, and expect it to take a little longer
-  than usual for Electrum to be ready.
-
-- The contents of your wallet file will be replaced with
-  an Electrum 2 wallet. This means Electrum 1.x will no
-  longer be able to use your wallet once the upgrade is
-  complete.
-
-- The 'Addresses' tab will not show any addresses the
-  first time you launch Electrum 2. This is expected
-  behaviour. Restart Electrum 2 after the upgrade is
-  complete and your addresses will be available.
-
-- Offline copies of Electrum will not show the
-  addresses at all because it cannot synchronize with
-  the network. You can force an offline generation of a
-  few addresses by typing the following into the
-  Console: wallet.synchronize(). When it's complete,
-  restart Electrum and your addresses will once again
-  be available.

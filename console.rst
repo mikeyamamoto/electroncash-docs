@@ -1,7 +1,7 @@
 The Python Console
 ==================
 
-Most Electrum commands are available not only using the command-line,
+Most Electron Cash commands are available not only using the command-line,
 but also in the GUI Python console. 
 
 The results are Python objects, even though they are sometimes
@@ -39,7 +39,7 @@ Python variable, it is rendered as a Python object:
    >> u 
    [{'tx_hash': u'e7029df9ac8735b04e8e957d0ce73987b5c9c5e920ec4a445130cdeca654f096', 'index': 0, 'raw_output_script': '76a91411bbdc6e3a27c44644d83f783ca7df3bdc2778e688ac', 'value': 0.01, 'address': '12cmY5RHRgx8KkUKASDcDYRotget9FNso3'}, {'tx_hash': u'b30edf57ca2a31560b5b6e8dfe567734eb9f7d3259bb334653276efe520735df', 'index': 0, 'raw_output_script': '76a914aaf437e25805f288141bfcdc27887ee5492bd13188ac', 'value': 9.04735316, 'address': '1GavSCND6TB7HuCnJSTEbHEmCctNGeJwXF'}]
 
-This makes it possible to combine Electrum commands with Python. For
+This makes it possible to combine Electron Cash commands with Python. For
 example, let us pick only the addresses in the previous result:
 
 .. code-block:: python

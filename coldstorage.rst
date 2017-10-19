@@ -4,7 +4,7 @@ Cold Storage
 ============
 
 This document shows how to create an offline wallet that
-holds your Bitcoins and a watching-only online wallet that
+holds your Bitcoin Cash and a watching-only online wallet that
 is used to view its history and to create transactions that
 have to be signed with the offline wallet before being
 broadcast on the online one.
@@ -27,7 +27,7 @@ window.  Transfer that key to your online machine somehow.
 Create a watching-only version of your wallet
 ---------------------------------------------
 
-On your online machine, open up Electrum and select File ->
+On your online machine, open up Electron Cash and select File ->
 New/Restore. Enter a name for the wallet and select "Restore a wallet
 or import keys".
 
@@ -83,5 +83,5 @@ Broadcast your transaction
 On your online machine, select Tools -> Load transaction -> From File
 from the menu. Select the signed transaction file. In the window that
 opens up, press "broadcast". The transaction will be broadcasted over
-the Bitcoin network.
+the Bitcoin Cash network.
 

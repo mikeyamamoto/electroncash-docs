@@ -1,7 +1,7 @@
 Serialization of unsigned or partially signed transactions
 ==========================================================
 
-Electrum 2.0 uses an extended serialization format for transactions.
+Electron Cash uses an extended serialization format for transactions.
 The purpose of this format is to send unsigned and partially signed
 transactions to cosigners or to cold storage.
 

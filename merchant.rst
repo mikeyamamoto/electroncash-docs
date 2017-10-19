@@ -1,8 +1,8 @@
-How to accept Bitcoin on a website using Electrum
-=================================================
+How to accept Bitcoin Cash on a website using Electron Cash
+===========================================================
 
-This tutorial will show you how to accept Bitcoin on a website with
-SSL signed payment requests. It is updated for Electrum 2.6.
+This tutorial will show you how to accept Bitcoin Cash on a website with
+SSL signed payment requests.
 
 
 Requirements
@@ -10,7 +10,7 @@ Requirements
 
 - A webserver serving static HTML
 - A SSL certificate (signed by a CA)
-- Electrum version >= 2.6
+- Electron Cash
 
 Create a wallet
 ---------------
@@ -19,16 +19,16 @@ Create a wallet on your web server:
 
 .. code-block:: bash
 
-   electrum create
+   electron-cash create
 
 You can also use a watching only wallet (restored from xpub), if you
 want to keep private keys off the server.
 
-Once your wallet is created, start Electrum as a daemon:
+Once your wallet is created, start Electron Cash as a daemon:
 
 .. code-block:: bash
 
-   electrum daemon start
+   electron-cash daemon start
 
 Add your SSL certificate to your configuration
 ----------------------------------------------
@@ -49,7 +49,7 @@ Set the path to your the private key file with setconfig:
 
 .. code-block:: bash
 
-   electrum setconfig ssl_privkey /path/to/ssl.key
+   electron-cash setconfig ssl_privkey /path/to/ssl.key
 
 Create another file, file that contains your certificate,
 and the list of certificates it depends on, up to the root
@@ -73,7 +73,7 @@ Set the ssl_chain path with setconfig:
 
 .. code-block:: bash
 
-   electrum setconfig ssl_chain /path/to/ssl.chain
+   electron-cash setconfig ssl_chain /path/to/ssl.chain
 
 
 Configure a requests directory
@@ -83,32 +83,32 @@ This directory must be served by your webserver (eg Apache)
 
 .. code-block:: bash
 
-   electrum setconfig requests_dir /var/www/r/
+   electron-cash setconfig requests_dir /var/www/r/
 
-By default, electrum will display local URLs, starting with 'file://'
+By default, Electron Cash will display local URLs, starting with 'file://'
 In order to display public URLs, we need to set another configuration
 variable, url_rewrite. For example:
 
 .. code-block:: bash
 
-   electrum setconfig url_rewrite "['file:///var/www/','https://electrum.org/']"
+   electron-cash setconfig url_rewrite "['file:///var/www/','https://electroncash.org/']"
 
 Create a signed payment request
 -------------------------------
 
 .. code-block:: bash
 
-   electrum addrequest 3.14 -m "this is a test"
+   electron-cash addrequest 3.14 -m "this is a test"
    {
-      "URI": "bitcoin:1MP49h5fbfLXiFpomsXeqJHGHUfNf3mCo4?amount=3.14&r=https://electrum.org/r/7c2888541a", 
+      "URI": "bitcoincash:1MP49h5fbfLXiFpomsXeqJHGHUfNf3mCo4?amount=3.14&r=https://electroncash.org/r/7c2888541a",
       "address": "1MP49h5fbfLXiFpomsXeqJHGHUfNf3mCo4", 
       "amount": 314000000, 
-      "amount (BTC)": "3.14", 
+      "amount (BCC)": "3.14",
       "exp": 3600, 
       "id": "7c2888541a", 
-      "index_url": "https://electrum.org/r/index.html?id=7c2888541a", 
+      "index_url": "https://electroncash.org/r/index.html?id=7c2888541a",
       "memo": "this is a test", 
-      "request_url": "https://electrum.org/r/7c2888541a", 
+      "request_url": "https://electroncash.org/r/7c2888541a",
       "status": "Pending", 
       "time": 1450175741
    }
@@ -134,7 +134,7 @@ Let us open index_url in a web browser.
 
 
 The page shows the payment request. You can open the
-bitcoin: URI with a wallet, or scan the QR code. The bottom
+bitcoincash: URI with a wallet, or scan the QR code. The bottom
 line displays the time remaining until the request expires.
 
 .. image:: png/payreq_window.png
@@ -158,18 +158,18 @@ Set ``websocket_server`` and ``websocket_port`` in your config:
 
 .. code-block:: bash
 
-    electrum setconfig websocket_server <FQDN of your server>
+    electron-cash setconfig websocket_server <FQDN of your server>
 
-    electrum setconfig websocket_port 9999
+    electron-cash setconfig websocket_port 9999
 
 
 And restart the daemon:
 
 .. code-block:: bash
 
-   electrum daemon stop
+   electron-cash daemon stop
 
-   electrum daemon start
+   electron-cash daemon start
    
 Now, the page is fully interactive: it will update itself
 when the payment is received. Please notice that higher ports might 
@@ -180,8 +180,8 @@ example to reverse proxy websockets transmission using standard
 JSONRPC interface
 -----------------
 
-Commands to the Electrum daemon can be sent using JSONRPC. This is
-useful if you want to use electrum in a PHP script.
+Commands to the Electron Cash daemon can be sent using JSONRPC. This is
+useful if you want to use Electron Cash in a PHP script.
 
 Note that the daemon uses a random port number by default. In order to
 use a stable port number, you need to set the 'rpcport' configuration
@@ -189,7 +189,7 @@ variable (and to restart the daemon):
 
 .. code-block:: bash
 
-   electrum setconfig rpcport 7777
+   electron-cash setconfig rpcport 7777
 
 With this setting, we can perform queries using curl or PHP. Example:
 

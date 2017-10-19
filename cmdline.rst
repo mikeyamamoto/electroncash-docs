@@ -4,25 +4,25 @@ Command Line
 ============
 
 
-Electrum has a powerful command line. This page will show you a few basic principles.
+Electron Cash has a powerful command line. This page will show you a few basic principles.
 
 
 Using the inline help
 ---------------------
 
 
-To see the list of Electrum commands, type:
+To see the list of Electron Cash commands, type:
 
 .. code-block:: bash
 
-   electrum help
+   electron-cash help
 
 
 To see the documentation for a command, type:
 
 .. code-block:: bash
 
-   electrum help <command>
+   electron-cash help <command>
 
 
 Magic words
@@ -38,7 +38,7 @@ The arguments passed to commands may be one of the following magic words: ! ? : 
 
   .. code-block:: bash
 
-     electrum payto 1JuiT4dM65d8vBt8qUYamnDmAMJ4MjjxRE !
+     electron-cash payto 1JuiT4dM65d8vBt8qUYamnDmAMJ4MjjxRE !
 
   Note that the transaction fee will be computed and deducted from the
   amount.
@@ -50,14 +50,14 @@ The arguments passed to commands may be one of the following magic words: ! ? : 
 
   .. code-block:: bash
 
-     electrum signmessage 1JuiT4dM65d8vBt8qUYamnDmAMJ4MjjxRE ?
+     electron-cash signmessage 1JuiT4dM65d8vBt8qUYamnDmAMJ4MjjxRE ?
 
 - Use a colon : if you want the prompted parameter to be hidden (not
   echoed in your terminal).
 
   .. code-block:: bash
 
-     electrum importprivkey :
+     electron-cash importprivkey :
 
   Note that you will be prompted twice in this example, first for the
   private key, then for your wallet password.
@@ -68,7 +68,7 @@ The arguments passed to commands may be one of the following magic words: ! ? : 
 
   .. code-block:: bash
 
-     cat LICENCE | electrum signmessage 1JuiT4dM65d8vBt8qUYamnDmAMJ4MjjxRE -
+     cat LICENCE | electron-cash signmessage 1JuiT4dM65d8vBt8qUYamnDmAMJ4MjjxRE -
 
 Aliases
 -------
@@ -78,7 +78,7 @@ commands.
 
 .. code-block:: bash
 
-   electrum payto ecdsa.net !
+   electron-cash payto ecdsa.net !
 
 
 Formatting outputs using jq
@@ -104,13 +104,13 @@ it:
 
 .. code-block:: bash
 
-   sig=$(cat LICENCE| electrum signmessage 1JuiT4dM65d8vBt8qUYamnDmAMJ4MjjxRE -)
+   sig=$(cat LICENCE| electron-cash signmessage 1JuiT4dM65d8vBt8qUYamnDmAMJ4MjjxRE -)
           
 And:
 
 .. code-block:: bash
 
-   cat LICENCE | electrum verifymessage 1JuiT4dM65d8vBt8qUYamnDmAMJ4MjjxRE $sig -
+   cat LICENCE | electron-cash verifymessage 1JuiT4dM65d8vBt8qUYamnDmAMJ4MjjxRE $sig -
 
 
 Show the values of your unspents
@@ -123,7 +123,7 @@ command:
 
 .. code-block:: bash
 
-   electrum listunspent | jq 'map(.value)'
+   electron-cash listunspent | jq 'map(.value)'
           
 
 Select only incoming transactions from history
@@ -133,7 +133,7 @@ Incoming transactions have a positive 'value' field
 
 .. code-block:: bash
 
-   electrum history | jq '.[] | select(.value>0)'
+   electron-cash history | jq '.[] | select(.value>0)'
 
 Filter transactions by date
 ```````````````````````````
@@ -145,7 +145,7 @@ timestamped after a given date:
 
    after=$(date -d '07/01/2015' +"%s")
 
-   electrum history | jq --arg after $after '.[] | select(.timestamp>($after|tonumber))'
+   electron-cash history | jq --arg after $after '.[] | select(.timestamp>($after|tonumber))'
           
 
 Similarly, we may export transactions for a given time
@@ -157,7 +157,7 @@ period:
 
    after=$(date -d '07/01/2015' +"%s")
 
-   electrum history | jq --arg before $before --arg after $after '.[] | select(.timestamp&gt;($after|tonumber) and .timestamp&lt;($before|tonumber))'
+   electron-cash history | jq --arg before $before --arg after $after '.[] | select(.timestamp&gt;($after|tonumber) and .timestamp&lt;($before|tonumber))'
           
 
 Encrypt and decrypt messages
@@ -167,20 +167,20 @@ First we need the public key of a wallet address:
 
 .. code-block:: bash
 
-   pk=$(electrum getpubkeys 1JuiT4dM65d8vBt8qUYamnDmAMJ4MjjxRE| jq -r '.[0]')
+   pk=$(electron-cash getpubkeys 1JuiT4dM65d8vBt8qUYamnDmAMJ4MjjxRE| jq -r '.[0]')
           
 
 Encrypt:
 
 .. code-block:: bash
 
-   cat | electrum encrypt $pk -
+   cat | electron-cash encrypt $pk -
 
 Decrypt:
 
 .. code-block:: bash
 
-   electrum decrypt $pk ?       
+   electron-cash decrypt $pk ?
 
 Note: this command will prompt for the encrypted message, then for the
 wallet password
@@ -193,7 +193,7 @@ addresses that hold some bitcoins:
 
 .. code-block:: bash
 
-   electrum listaddresses --funded | electrum getprivatekeys -
+   electron-cash listaddresses --funded | electron-cash getprivatekeys -
 
 This will return a list of lists of private keys. In most
 cases, you want to get a simple list. This can be done by
@@ -201,11 +201,11 @@ adding a jq filer, as follows:
 
 .. code-block:: bash
 
-   electrum listaddresses --funded | electrum getprivatekeys - | jq 'map(.[0])'
+   electron-cash listaddresses --funded | electron-cash getprivatekeys - | jq 'map(.[0])'
           
 Finally, let us use this list of private keys as input to the sweep
 command:
 
 .. code-block:: bash
 
-   electrum listaddresses --funded | electrum getprivatekeys - | jq 'map(.[0])' | electrum sweep - 1uCMeviLYzwWh1P2gEh3R4X34ArzVUR1R
+   electron-cash listaddresses --funded | electron-cash getprivatekeys - | jq 'map(.[0])' | electron-cash sweep - 1uCMeviLYzwWh1P2gEh3R4X34ArzVUR1R
