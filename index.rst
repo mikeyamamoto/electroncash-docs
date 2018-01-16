@@ -6,8 +6,7 @@
 Welcome to the Electron Cash documentation!
 ===========================================
 
-**Electron Cash version 2.9.4 has been released. This upgrade includes support for the November hard fork and is required.
-Version 2.9.3 and below will not work correctly after the hard fork.**
+**SECURITY ALERT: Electron Cash version 3.1.2 has been released. A JSONRPC security hole was discovered that affects all Electrum forks. This has been fully patched in Electron Cash 3.1.2. If you were running a prior version as an online wallet without a strong password, you should consider the wallet compromised and create a fresh wallet with version 3.1.2 or better. **
 
 Electron Cash is a lightweight Bitcoin Cash wallet.
 
