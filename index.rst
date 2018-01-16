@@ -20,9 +20,10 @@ Electron Cash can be downloaded from https://electroncash.org/ or the `PlayStore
 Getting Started
 ---------------
 .. toctree::
-   :maxdepth: 2
+    :maxdepth: 2
 
-   docs/verifydownload
+    docs/verifydownload
+    docs/install
 
 Contributing
 ------------
