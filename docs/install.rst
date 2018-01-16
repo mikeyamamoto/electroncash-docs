@@ -1,0 +1,3 @@
+
+Installing Electron Cash
+========================
