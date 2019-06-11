@@ -12,8 +12,8 @@ Electron Cash is a lightweight Bitcoin Cash wallet.
 
 Current versions are:
 
-- Windows, Mac, and Linux - 3.1.2
-- Android - 3.1.3
+- Windows, Mac, and Linux - 4.0.6
+- Android - 3.3.5
 
 Electron Cash can be downloaded from https://electroncash.org/ or the `PlayStore <https://play.google.com/store/apps/details?id=org.electroncash.electroncash3>`_. These are the *only* authentic sources.
 
