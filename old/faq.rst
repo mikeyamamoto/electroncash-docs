@@ -51,35 +51,6 @@ to recover your money. This is why we ask you to save your seed
 phrase on paper.
 
 
-My transaction has been unconfirmed for a long time. What can I do?
--------------------------------------------------------------------
-
-Bitcoin Cash transactions become 'confirmed' when miners accept to write
-them in the Bitcoin Cash blockchain. In general, the speed of confirmation
-depends on the fee you attach to your transaction; miners prioritize
-transaction that pay the highest fees.
-
-Recent versions of Electron Cash use 'dynamic fees', in order to make sure
-that the fee you pay with your transaction is adequate. This feature
-is enabled by default in recent versions of Electron Cash.
-
-If you have made a transaction that is unconfirmed, you can:
-
- - Wait for a long time. Eventually, your transaction will either be
-   confirmed or cancelled. This might take several days.
-
- - Increase the transaction fee. This is only possible for
-   'replaceable' transactions. To create this type of transaction, you
-   must have enabled 'Replace by Fee' in your preferences, before
-   sending the transaction.
-
- - Create a 'Child Pays For Parent' transaction. A CPFP is a new
-   transaction, that pays a high fee in order to compensate for the
-   small fee of its parent transaction. It can be done by the
-   recipient of the funds, or by the sender, if the transaction has a
-   change output.
-
-
 What does it mean to "Freeze" an address in Electron Cash?
 ----------------------------------------------------------
 
@@ -137,7 +108,6 @@ recovered from seed.
 
 Can I sweep private keys from other Bitcoin Cash clients?
 ---------------------------------------------------------
-
 
 Sweeping private keys means to send all the Bitcoin Cash they control to
 an existing address in your wallet. The private keys you sweep do not
@@ -253,6 +223,10 @@ How to upgrade Electron Cash?
 
 Warning: always save your wallet seed on paper before
 doing an upgrade.
+
+You can view your seed by clicking Wallet menu -> Seed. Write them down on a piece of paper and store it in a safe place. 
+
+NOTE: Do not save it on your computer or your phone. Anyone with the seed can take your Bitcoin Cash.
 
 To upgrade Electron Cash, just install the most recent version.
 The way to do this will depend on your OS.
